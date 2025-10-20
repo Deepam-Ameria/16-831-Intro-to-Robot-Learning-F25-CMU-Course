@@ -1,0 +1,72 @@
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+Small Batch
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 1500 -rtg --exp_name q1_sb_rtg_na
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 1500 -dsa --exp_name q1_sb_no_rtg_dsa
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 1500 -rtg -dsa --exp_name q1_sb_rtg_dsa
+
+Large Batch
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 6000 -rtg --exp_name q1_lb_rtg_na
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 6000 -dsa --exp_name q1_lb_no_rtg_dsa
+python3 rob831/scripts/run_hw2.py --env_name CartPole-v0 -n 150 -b 6000 -rtg -dsa --exp_name q1_lb_rtg_dsa
+
+
+Inverted Pendulum Experiments
+python rob831/scripts/run_hw2.py --env_name InvertedPendulum-v4 --ep_len 1000 --discount 0.92 --n_iter 100 \
+--n_layers 2 --size 64 --reward_to_go --exp_name q2_b10000_r0.01 --batch_size 10000 --learning_rate 0.01
+
+python rob831/scripts/run_hw2.py --env_name InvertedPendulum-v4 --ep_len 1000 --discount 0.92 --n_iter 100 \
+--n_layers 2 --size 64 --reward_to_go --exp_name q2_b20000_r0.01 --batch_size 20000 --learning_rate 0.01
+
+python rob831/scripts/run_hw2.py --env_name InvertedPendulum-v4 --ep_len 1000 --discount 0.92 --n_iter 100 \
+--n_layers 2 --size 64 --reward_to_go --exp_name q2_b10000_r0.005 --batch_size 10000 --learning_rate 0.005
+
+python rob831/scripts/run_hw2.py --env_name InvertedPendulum-v4 --ep_len 1000 --discount 0.92 --n_iter 100 \
+--n_layers 2 --size 64 --reward_to_go --exp_name q2_b30000_r0.01 --batch_size 30000 --learning_rate 0.01
+
+python rob831/scripts/run_hw2.py --env_name InvertedPendulum-v4 --ep_len 1000 --discount 0.92 --n_iter 100 \
+--n_layers 2 --size 64 --reward_to_go --exp_name q2_b15000_r0.008 --batch_size 15000 --learning_rate 0.008
+
+
+
+Lunar Lander: 
+python rob831/scripts/run_hw2.py \
+--env_name LunarLanderContinuous-v2 --ep_len 1000 \
+--discount 0.99 -n 100 -l 2 -s 64 -b 10000 -lr 0.005 \
+--reward_to_go --nn_baseline --exp_name q3_b10000_r0.005
+
+Half Cheetah:
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 10000 -lr 0.01 -rtg --nn_baseline \
+--exp_name q4_search_b10000_lr0.01_rtg_nnbaseline
+
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 15000 -lr 0.01 -rtg --nn_baseline \
+--exp_name q4_search_b15000_lr0.01_rtg_nnbaseline
+
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 20000 -lr 0.02 -rtg --nn_baseline \
+--exp_name q4_search_b20000_lr0.02_rtg_nnbaseline
+
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 25000 -lr 0.02 -rtg --nn_baseline \
+--exp_name q4_search_b25000_lr0.02_rtg_nnbaseline
+
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 30000 -lr 0.01 -rtg --nn_baseline \
+--exp_name q4_search_b30000_lr0.01_rtg_nnbaseline
+
+python rob831/scripts/run_hw2.py --env_name HalfCheetah-v4 --ep_len 150 \
+--discount 0.95 -n 100 -l 2 -s 32 -b 30000 -lr 0.02 -rtg --nn_baseline \
+--exp_name q4_search_b30000_lr0.02_rtg_nnbaseline
+
+
+Hopper:
+python rob831/scripts/run_hw2.py --env_name Hopper-v4 --ep_len 1000 --discount 0.99 -n 300 -l 2 -s 32 -b 2000 -lr 0.001 --reward_to_go --nn_baseline --action_noise_std 0.5 --gae_lambda 0 --exp_name q5_b2000_r0.001_lambda0
+
+python rob831/scripts/run_hw2.py --env_name Hopper-v4 --ep_len 1000 --discount 0.99 -n 300 -l 2 -s 32 -b 2000 -lr 0.001 --reward_to_go --nn_baseline --action_noise_std 0.5 --gae_lambda 0.95 --exp_name q5_b2000_r0.001_lambda0.95
+
+python rob831/scripts/run_hw2.py --env_name Hopper-v4 --ep_len 1000 --discount 0.99 -n 300 -l 2 -s 32 -b 2000 -lr 0.001 --reward_to_go --nn_baseline --action_noise_std 0.5 --gae_lambda 0.99 --exp_name q5_b2000_r0.001_lambda0.99
+
+python rob831/scripts/run_hw2.py --env_name Hopper-v4 --ep_len 1000 --discount 0.99 -n 300 -l 2 -s 32 -b 2000 -lr 0.001 --reward_to_go --nn_baseline --action_noise_std 0.5 --gae_lambda 1 --exp_name q5_b2000_r0.001_lambda1
+
