@@ -1,0 +1,15 @@
+#mujoco==2.2.1
+#mujoco-py
+#free-mujoco-py
+#gym[box2d]==0.25.1
+pyglet==1.5.0
+tensorboard==2.10.0
+tensorboardX==2.5.1
+matplotlib
+torch>=1.12.1
+patchelf
+pyvirtualdisplay
+IPython
+gym-notebook-wrapper
+
+#numpy==1.25.2
